@@ -2,70 +2,222 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Bienvenue sur gremaud.dev</title>
-<meta name="description" content="Ce site est actuellement en construction.">
-<meta name="generator" content="hosting-page-builder">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="og:url" content="http://gremaud.dev/index.html">
-<meta name="og:locale" content="fr">
-<meta name="og:type" content="website">
-<meta name="og:title" content="Bienvenue sur gremaud.dev">
-<meta name="og:description" content="Ce site est actuellement en construction.">
-<meta name="og:updated_time" content="1607306345">
-<link rel="stylesheet" href="https://assets.storage.infomaniak.com/fonts/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>gremaud.dev</title>
+<meta name="description" content="Mes mini projets.">
 <style>
-html,body{height:100%;padding:0;margin:0}.page{position:relative;display:table;table-layout:fixed;width:100%;height:100%;line-height:normal;text-align:center;font-family:Open Sans, sans-serif;font-size:1.1em;color:#fff;background-color:#f0f0f0;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-attachment:fixed}h1,h2,h3,h4,h5{line-height:1.3;font-weight:normal}.bg-position-top{background-position:50% 0}.bg-position-middle{background-position:50% 50%}.bg-position-bottom{background-position:50% 100%}.page:before{content:"";position:absolute;top:0;left:0;bottom:0;right:0;filter:alpha(opacity=40);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";opacity:0.4}img{max-width:100%;width:auto\9;height:auto}a,a:link{color:inherit;filter:alpha(opacity=85);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";opacity:0.85}a:hover,a:focus,a:active{filter:alpha(opacity=100);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";opacity:1;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}ul,ol{display:inline-block;text-align:left;max-width:50%}.container{position:relative;display:table-cell;width:100%;vertical-align:middle;padding:1em 2em;z-index:1}.content{max-width:900px;margin:0 auto}.social-links:empty{outline:1px solid yellow}.social-links{padding:1em 0;vertical-align:middle}.social-links a{padding:0 0.3em;line-height:normal}.hosting-info{position:absolute;display:block;bottom:0;left:0;right:0;padding:1em;font-size:0.8em}.hosting-info p{margin:0;padding:0;font-size:12px}.overlay-dark{background-color:#333}.overlay-dark:before{background-color:#333}.overlay-bright{background-color:white}.overlay-bright:before{background-color:white;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";opacity:0.7}@media screen{.page[class]{background-image:url("oeuf.webp")}}body.debug:after{content:"default";position:fixed;left:0;bottom:0;background-color:white;color:black;padding:0.5em;font-size:10px;text-transform:uppercase}@media screen and (max-width: 640px){body.debug:after{content:"small"}h1{font-size:2em}ul,ol{max-width:none}.page{min-width:300px}.page .container{padding:3em}.page,.page[class]{background-image:url("oeuf.webp")}}@media screen and (min-width: 641px) and (max-width: 1199px),(min-height:500px) and (max-height: 1199px){body.debug:after{content:"medium"}.page,.page[class]{background-image:url("oeuf.webp")}}@media screen and (min-width: 1200px){body.debug:after{content:"large"}.page,.page[class]{background-image:url("oeuf.webp")}}.page .fallback-bg{display:none}.ie8 .page .fallback-bg{display:block;position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;max-width:inherit;z-index:0}
+:root {
+    --bg: #ffffff;
+    --bg-header: #f6f8fa;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --text-muted: #59636e;
+    --link: #0969da;
+    --card-hover: #f6f8fa;
+    --tag-bg: #ddf4ff;
+    --tag-text: #0969da;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0d1117;
+        --bg-header: #010409;
+        --border: #30363d;
+        --text: #e6edf3;
+        --text-muted: #9198a1;
+        --link: #4493f8;
+        --card-hover: #161b22;
+        --tag-bg: #121d2f;
+        --tag-text: #4493f8;
+    }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border);
+    padding: 16px;
+}
+header .inner {
+    max-width: 1012px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+header .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--text);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+main {
+    max-width: 1012px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    display: flex;
+    gap: 32px;
+}
+
+.profile { width: 256px; flex-shrink: 0; }
+.avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #8b6f47, #d9c7a7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 96px;
+}
+.profile h1 { font-size: 24px; margin: 16px 0 0; font-weight: 600; line-height: 1.25; }
+.profile .handle { font-size: 20px; color: var(--text-muted); font-weight: 300; }
+.profile p { margin: 16px 0 0; }
+
+.projects { flex: 1; min-width: 0; }
+.tabs {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+.tabs span {
+    display: inline-block;
+    padding: 8px 16px;
+    border-bottom: 2px solid #fd8c73;
+    font-weight: 600;
+}
+.tabs .count {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 6px;
+    border-radius: 2em;
+    background-color: var(--border);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    color: var(--text);
+}
+.card:hover { background-color: var(--card-hover); text-decoration: none; }
+.card .title { display: flex; align-items: center; gap: 8px; }
+.card .name { color: var(--link); font-weight: 600; }
+.card:hover .name { text-decoration: underline; }
+.card .badge {
+    border: 1px solid var(--border);
+    border-radius: 2em;
+    padding: 0 7px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.card .desc { color: var(--text-muted); font-size: 12px; margin: 8px 0 16px; flex: 1; }
+.card .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.card .tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 2em;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.card .meta { color: var(--text-muted); font-size: 12px; display: flex; align-items: center; gap: 6px; }
+.lang-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+footer {
+    max-width: 1012px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    main { flex-direction: column; gap: 24px; }
+    .profile { width: 100%; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .avatar { width: 80px; font-size: 40px; }
+    .profile h1 { margin: 0; }
+    .profile p { width: 100%; margin: 0; }
+    .grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<div id="page" class="page  overlay-dark bg-position-middle">
-<div class="container">
-<div class="content">
-    <h1>Qui empile un oeuf kiffe les keufs</h1>
-
-    <div class="form-horizontal">
-        <div class="form-group row">
-            <label class="col-sm-3 col-form-label offset-sm-1">Forme</label>
-            <select class="form-select col-sm-4 form-control" id="shape">
-                <option selected value="egg">Oeuf</option>
-                <option value="sphere">Sphere</option>
-            </select>
-        </div>
-
-        <div class="form-group row">
-            <label for="variableT" class="col-sm-3 col-form-label offset-sm-1">Taille</label>
-            <div class="col-sm-4">
-                <input type="number" class="form-control" id="variableT" placeholder="Taille totale de l'oeuf">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="variableT" class="col-sm-3 col-form-label offset-sm-1">Nbr d'étages</label>
-            <div class="col-sm-4">
-                <input type="number" class="form-control" id="variableX" placeholder="Nombres d'étages">
-            </div>
-        </div>
-        <button class="btn btn-outline-light mb-2" onclick="calculateResults()">Calculer</button>
-    
-        <div class="alert alert-danger invisible" id="alert" role="alert">
-          </div>
-    
-          <div class="form-group row border rounded">
-            <ul class="list-group col-sm-12" id="radiusList">
-            </ul>
-        </div>
+<header>
+    <div class="inner">
+        <div class="logo">G</div>
+        <span>gremaud.dev</span>
     </div>
+</header>
 
+<main>
+    <aside class="profile">
+        <div class="avatar">🥚</div>
+        <div>
+            <h1>Gremaud</h1>
+            <div class="handle">gremaud.dev</div>
+        </div>
+        <p>Une petite collection de mini projets.</p>
+    </aside>
 
-</div>
-<div class="social-links">
-</div>
-<div class="hosting-info">
-</div>
-</div>
-</div>
-<script src="shape_calc.js"></script>
+    <section class="projects">
+        <div class="tabs">
+            <span>Projets <span class="count" id="project-count"></span></span>
+        </div>
+
+        <div class="grid" id="project-grid">
+            <a class="card" href="egg-calculator/">
+                <div class="title">
+                    <span class="name">egg-calculator</span>
+                    <span class="badge">Public</span>
+                </div>
+                <p class="desc">Calcule le rayon de chaque étage d'un oeuf (ou d'une sphère) en pierres empilées.</p>
+                <div class="tags">
+                    <span class="tag">calculateur</span>
+                    <span class="tag">empilement</span>
+                </div>
+                <div class="meta">
+                    <span class="lang-dot" style="background-color:#f1e05a"></span>
+                    JavaScript
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>&copy; <span id="year"></span> gremaud.dev</footer>
+
+<script>
+document.getElementById("project-count").textContent = document.querySelectorAll("#project-grid .card").length;
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
